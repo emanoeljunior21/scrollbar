@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+--background: #1f2336;
+--scrollbar-background: #313852;
+--text: #f1f1f1;
+--text-active: #f1f1f180;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    background-color: var(--background);
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    padding: 16px;
+    max-width: 200px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.cartao {
+    min-width: 200px;
+    min-height: 200px;
+    color: var(--text);
+    display: flex;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-radius: 16px;
+    transition: all 0.2s;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    scroll-snap-align: start;
+}
+
+.cartao:nth-child(1) {
+    background-image: linear-gradient( to bottom, #9277f2, #6250d7);
+}
+
+.cartao:nth-child(2) {
+    background-image: linear-gradient( to bottom, #e5866c, #df795d);
+}
+
+.cartao:nth-child(3) {
+    background-image: linear-gradient( to bottom, #97bf42, #75aa29);
+}
+
+.cartao:nth-child(4) {
+    background-image: linear-gradient( to bottom, #5866e4, #4d5ad9);
+}
+
+.container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: var(--scrollbar-background);
+    border-radius: 999px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: var(--text);
+    border-radius: 999px;
+}
